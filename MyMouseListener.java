@@ -1,33 +1,28 @@
-
+import java.awt.event.*;
 /**
  * Write a description of class MouseMotionListener here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class MyMouseListener
+public class MyMouseListener extends MouseAdapter implements MouseListener,MouseMotionListener
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class MouseMotionListener
-     */
-    public MouseMotionListener()
-    {
-        // initialise instance variables
-        x = 0;
+    public void mousePressed(MouseEvent e){
+    
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void mouseEntered(MouseEvent e){
+        
+    }
+    public void mouseExited(MouseEvent e){
+        
+    }
+    public void Released(MouseEvent e){
+        
+    }
+    public void mouseDragged(MouseEvent e){
+        
+    }
+    public void mouseMoved(MouseEvent e){
+        
     }
 }
