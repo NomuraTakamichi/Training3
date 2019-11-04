@@ -1,4 +1,5 @@
 import java.awt.event.*;
+import java.awt.*;
 import javax.swing.*;
 /**
  * Write a description of class MouseMotionListener here.
@@ -8,22 +9,18 @@ import javax.swing.*;
  */
 public class MyMouseListener extends MouseAdapter implements MouseListener,MouseMotionListener
 {
-   JLabel jl;
-public void mousePressed(MouseEvent e){
+    JLabel jl;
+    public void mousePressed(MouseEvent e){
         jl.setText("mousePressed("+e.getX()+ "," + e.getY()+")");
     }
-        public void mouseReleased(MouseEvent e){
+
+    public void mouseReleased(MouseEvent e){
         jl.setText("mouseReleased("+e.getX()+ "," + e.getY()+")");
     }
-    public void mouseClicked(MouseEvent e){}
+
     public void mouseEntred(MouseEvent e){
-        Component c = (Component)e.getSource();
-        c.setBackground(Color.CYAN);
-        
+        MyMouseFrame mp = new MyMouseFrame();
+        mp.setBackground(Color.CYAN);
     }
-    public void mouseExited(MouseEvent e){
-        Component c = (Component)e.getSource();
-        c.setBackground(Color.YELLOW);
-    }
-    
+
 }

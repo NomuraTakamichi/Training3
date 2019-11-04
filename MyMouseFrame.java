@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 /**
  * 여기에 MyMouseFrame 클래스 설명을 작성하십시오.
@@ -8,12 +9,26 @@ import java.awt.event.*;
  */
 public class MyMouseFrame extends JFrame
 {
+    MyPanel mp = new MyPanel();
+    MyMouseListener ml;
+    JLabel jl;
     public MyMouseFrame(){
-        setTitle("MouseListener and MouseMotionListener");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(200,200);
-        setVisible(true);
-        
+        this.setTitle("MouseListener and MouseMotionListener");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(500,500);
+        this.setVisible(true);
+        ml = new MyMouseListener();
+        this.addMouseListener(ml);
+        this.addMouseMotionListener(ml);
+        this.add(mp);
     }
-
+    public class MyPanel extends JPanel{
+        public MyPanel(){
+            this.setLayout(new FlowLayout());
+            jl = new JLabel("mouse("+ getX() +","+ getY() +")");
+            this.add(jl);
+            this.setBackground(Color.YELLOW);
+            this.add(ml); 
+        }
+    }
 }
